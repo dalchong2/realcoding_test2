@@ -95,6 +95,16 @@ public class MockServiceTest {
 
     }
 
+    @Test
+    public void setLapperPositionUseVerify(){
+        Champion izone = mock(Champion.class);
+        izone.setName("예나");
+        izone.setPosition("래퍼");
+        verify(izone, times(1)).setPosition("래퍼");
+    }
+
+
+
     // 4. champion 객체의 크기를 검증하는 로직이 1번 실행되었는지 테스트 하세요.
     @Test
     public void verifyObjectSize(){
