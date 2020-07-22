@@ -110,14 +110,24 @@ public class MockServiceTest {
     public void verifyObjectSize(){
         //ArrayList<Champion> championList = mock(ArrayList.class);
         List<Champion> monkChampions =mock(List.class);
+        ArrayList<Champion> mockIzone = mock(ArrayList.class);
+
         Champion champion = mock(Champion.class);
+        Champion izone = mock(Champion.class);
         champion.setName("애쉬");
         champion.setHasSkinCount(10);
         champion.setPosition("원딜");
         monkChampions.add(champion);
 
+        izone.setName("채원");
+        izone.setPosition("리드보컬");
+        mockIzone.add(izone);
+
         System.out.println("Size :: "+monkChampions.size()); //값이 나오지 않는다.
+        System.out.println("Size :: "+mockIzone.size()); //값이 나오지 않는다.
         verify(monkChampions, times(1)).size();
+        verify(mockIzone, times(1)).size();
+
     }
 
     // 4-1. champion 객체에서 이름을 가져오는 로직이 2번 이상 실행되면 Pass 하는 로직을 작성하세요.
