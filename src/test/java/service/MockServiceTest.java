@@ -75,6 +75,13 @@ public class MockServiceTest {
         champion.setName("야스오");
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void madeExceptionWhenSetNameIzone( ){
+        Champion izone = mock(Champion.class);
+        doThrow(new IllegalArgumentException()).when(izone).setName(("아이즈원"));
+        izone.setName("아이즈원");
+    }
+
     // 3. verify 를 사용하여 '미드' 포지션을 저장하는 프로세스가 진행되었는지 테스트 하세요.
     @Test
     public void SetMidPositionUseVerify (){
