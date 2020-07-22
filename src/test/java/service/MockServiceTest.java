@@ -134,9 +134,17 @@ public class MockServiceTest {
     @Test
     public void shouldTwoTimesINvocationForGetChampionName(){
         Champion champion = mock(Champion.class);
+        Champion izone = mock(Champion.class);
+
         champion.setName("제드");
         champion.setPosition("미드");
         champion.setHasSkinCount(10);
+
+        izone.setName("혜원");
+        izone.getName();
+        izone.getName();
+        System.out.println(izone.getName());
+        verify(izone, atLeast(2)).getName();
 
         System.out.println("Champion : "+champion.getName());
         System.out.println("Champion : "+champion.getName());
