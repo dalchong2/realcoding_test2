@@ -57,6 +57,16 @@ public class MockServiceTest {
         assertThat(champion.getName(), is("베인"));
     }
 
+    @Test
+    public void mustReturnIzoneWhenAnyidolName(){
+        Champion idol = mock(Champion.class);
+        idol.setName("아이즈원");
+        when(idol.getName()).thenReturn("아이즈원");
+        assertThat(idol.getName(), is("아이즈원"));
+        assertTrue(idol.getName() == "아이즈원");
+
+        System.out.println(idol.getName());
+    }
     // 2. 챔피언 이름으로 야스오를 저장하면, doThrow를 사용하여 Exception이 발생하도록 테스트 하세요.
     @Test(expected = IllegalArgumentException.class)
     public void madeExceptionWhenSetNameYasuo (){
